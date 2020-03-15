@@ -15,10 +15,6 @@ export class HeroFormComponent implements OnInit {
 
   submitted = false;
 
-  get diagnostic() {
-    return JSON.stringify(this.model);
-  }
-
 
   constructor() {
   }
@@ -27,9 +23,17 @@ export class HeroFormComponent implements OnInit {
   }
 
 
-  onSubmitt() {
-    this.submitted = true;
+  get diagnostic() {
+    return JSON.stringify(this.model);
   }
 
+  newHero() {
+    this.model = new Hero(42, '', '');
+  }
+
+  onSubmit() {
+    alert(1);
+    this.submitted = true;
+  }
 
 }
